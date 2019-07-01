@@ -15,7 +15,7 @@ describe('Bank', function() {
   describe("'deposit' method", function() {
     it("should increase balance by £1000", function() {
       bank.deposit(1000);
-      expect(bank._balance).toEqual(1000);
+      expect(bank._balance).toBeCloseTo(1000.00, 2);
     });
   });
 
@@ -23,7 +23,7 @@ describe('Bank', function() {
     it("should decrease the balance by £500", function() {
       bank.deposit(1000);
       bank.withdraw(500);
-      expect(bank._balance).toEqual(500);
+      expect(bank._balance).toBeCloseTo(500.00, 2);
     });
   });
 
@@ -45,14 +45,14 @@ describe('Bank', function() {
     it("should display a deposit transaction", function(){
       bank.deposit(1000);
     
-      expect(bank._transactions).toEqual(["date || credit || debit || balance", `${today} || 1000 || || 1000`])
+      expect(bank._transactions).toEqual(["date || credit || debit || balance", `${today} || 1000.00 || || 1000.00`])
     });
 
     it("should display a withdraw transaction", function(){
       bank.deposit(1000);
       bank.withdraw(250);
     
-      expect(bank._transactions).toEqual(["date || credit || debit || balance", `${today} || || 250 || 750`, `${today} || 1000 || || 1000`])
+      expect(bank._transactions).toEqual(["date || credit || debit || balance", `${today} || || 250.00 || 750.00`, `${today} || 1000.00 || || 1000.00`])
     });
     
   });

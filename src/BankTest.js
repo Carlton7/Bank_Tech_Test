@@ -1,7 +1,7 @@
 'use strict';
 
 function Bank() {
-  this._balance = 0;
+  this._balance = 0.00;
   this._transactions = ['date || credit || debit || balance']
 };
 
@@ -15,14 +15,19 @@ today = dd + '/' + mm + '/' + yyyy;
 
 Bank.prototype.deposit = function(money) {
   this._balance = this._balance + money;
-  var record = `${today} || ${money} || || ${this._balance}`
+  var record = `${today} || ${money.toFixed(2)} || || ${this._balance.toFixed(2)}`
   this._transactions.splice(1, 0, record);
 };
 
 Bank.prototype.withdraw = function(money) {
   this._balance = this._balance - money;
-  var record = `${today} || || ${money} || ${this._balance}`
+  var record = `${today} || || ${money.toFixed(2)} || ${this._balance.toFixed(2)}`
   this._transactions.splice(1, 0, record);
 };
 
+Bank.prototype.bankStatement = function() {
+  this._transactions.forEach(function(element) {
+    console.log(element);
+  });
+};
 
