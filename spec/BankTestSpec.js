@@ -18,4 +18,12 @@ describe('Bank', function() {
     });
   });
 
+  describe("'withdraw' method", function() {
+    it("should decrease the balance by £500", function() {
+      bank.deposit(1000);
+      bank.withdraw(500);
+      expect(bank._balance).toEqual(500);
+    });
+  });
+
 });
