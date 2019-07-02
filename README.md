@@ -45,6 +45,8 @@ git log commit history:
 
 6. further refactoring and using jslint on the code, date variable changed
 
+7. refactored and renamed certain files, added detail to the readme and an images folder
+
 ## Edge Cases:
 * Customer can withdraw more money than is available in the current account. I did not fix this as it was not stated, but mainly because an account can go into overdraft.
 
