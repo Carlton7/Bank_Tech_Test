@@ -42,11 +42,11 @@ describe('Bank', function() {
       expect(bank.transactions).toEqual(["date || credit || debit || balance", `${date} || 1000.00 || || 1000.00`])
     });
 
-    it("should display a withdraw transaction", function(){
+    it("should display a withdraw transaction + check decimal points on both deposit and withdraw", function(){
       bank.deposit(1000);
       bank.withdraw(250);
     
       expect(bank.transactions).toEqual(["date || credit || debit || balance", `${date} || || 250.00 || 750.00`, `${date} || 1000.00 || || 1000.00`])
-    });   
+    });
   });
 });
