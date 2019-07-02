@@ -1,3 +1,5 @@
+[![BCH compliance](https://bettercodehub.com/edge/badge/Carlton7/Bank_Tech_Test?branch=master)](https://bettercodehub.com/)
+
 Bank Tech Test
 =================
 
